@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+  max-width: 100%;
+  top: 0;
+  background-color: whitesmoke;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: x-large;
+  letter-spacing: 1.5px;
+  color: orange;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  width: 300px;
+}
+
+nav a {
+  height: 24px;
+  margin-left: 5%;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+}
+
+nav button {
+  margin-left: 5%;
+  border-radius: 20%;
+  color: white;
+  background-color: orange;
+  border: none;
+  padding: 5%;
+}
+
+.app {
+  background:
+    linear-gradient(rgba(33, 33, 33, 0.9), rgba(33, 33, 33, 0.85)),
+    url("https://wallpaperaccess.com/full/4444487.jpg") center/cover fixed;
+  display: flex;
+  padding: 20%;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.app h1{
+    font-size: 3.5rem;
+    color: orange;
+}
+
+.app p{
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
+
+.app-buttons{
+    display: flex;
+    justify-content: space-between;
+}
