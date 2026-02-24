@@ -11,45 +11,70 @@ body {
 }
 
 header {
-  display: flex;
   position: sticky;
+  top: 0;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1%;
-  max-width: 100%;
-  top: 0;
+  padding: 22px 50px;
   background-color: whitesmoke;
+  z-index: 1;
 }
 
 .logo {
-  font-weight: 800;
+  color: orangered;
   font-size: x-large;
-  letter-spacing: 1.5px;
-  color: orange;
+  font-weight: 800;
+  align-items: center;
+  gap: 10px;
 }
 
 nav {
   display: flex;
   align-items: center;
-  width: 300px;
+  gap: 30px;
 }
 
 nav a {
-  height: 24px;
-  margin-left: 5%;
+  text-decoration: none;
   color: black;
   font-weight: 600;
-  text-decoration: none;
+  font-size: large;
   position: relative;
 }
 
+nav a:not(button):after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: orangered;
+  transition: all 0.3s ease;
+}
+
+nav a:hover:not(button) {
+  color: orangered;
+}
+
+nav a:hover:not(button):after {
+  width: 100%;
+}
+
 nav button {
-  margin-left: 5%;
-  border-radius: 20%;
-  color: white;
-  background-color: orange;
+  background-color: orangered;
   border: none;
-  padding: 5%;
+  color: whitesmoke;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+nav button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
 
 .app {
@@ -58,26 +83,269 @@ nav button {
     url("https://wallpaperaccess.com/full/4444487.jpg") center/cover fixed;
   display: flex;
   padding: 20%;
-  height: 100%;
-  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
-.app h1{
-    font-size: 3.5rem;
-    color: orange;
+.app h1 {
+  font-size: 3.5rem;
+  color: orangered;
 }
 
-.app p{
-    padding: 1.5rem;
-    font-size: 1.5rem;
-    color: whitesmoke;
+.app p {
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  color: whitesmoke;
 }
 
-.app-buttons{
-    display: flex;
-    justify-content: space-between;
+.app-buttons {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  gap: 1.5rem;
+}
+
+.learnmore {
+  border: 2px solid orangered;
+  border-radius: 8px;
+  padding: 20px 50px;
+  text-decoration: none;
+  color: whitesmoke;
+  transition: all 0.3s ease;
+}
+
+.learnmore:hover {
+  background-color: orangered;
+  transform: translateY(-3px);
+}
+
+.download {
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  padding: 20px 50px;
+  background-color: orangered;
+  color: whitesmoke;
+  transition: all 0.3s ease;
+}
+
+.download:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.about {
+  background-color: black;
+  text-align: center;
+  justify-items: center;
+  padding: 150px;
+}
+
+.about h2 {
+  color: orangered;
+  font-size: 2.5rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 30px;
+  z-index: 0;
+}
+
+.about h2:after {
+  content: "";
+  height: 4px;
+  width: 80px;
+  background-color: orangered;
+  position: absolute;
+  left: calc(50% - 40px);
+  bottom: -3px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.about p {
+  color: whitesmoke;
+  font-size: 1.2rem;
+  max-width: 800px;
+}
+
+.features {
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 100px 150px;
+}
+
+.features h2 {
+  color: orangered;
+  font-size: 2.5rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 100px;
+  z-index: 0;
+}
+
+.features h2:after {
+  content: "";
+  height: 4px;
+  width: 80px;
+  background-color: orangered;
+  position: absolute;
+  left: calc(50% - 40px);
+  bottom: -3px;
+  margin-bottom: 80px;
+  border-radius: 8px;
+}
+
+.feature-list {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.feature-column {
+  background-color: white;
+  border-radius: 8px;
+  width: 320px;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.feature-column:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 0;
+  background: orangered;
+  transition: all 0.3s ease;
+}
+
+.feature-column:hover {
+  transform: translateY(-10px);
+}
+
+.feature-column:hover:before {
+  height: 100%;
+}
+
+.feature-column i {
+  color: orangered;
+  font-size: 2.5rem;
+  padding-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.feature-column:hover i {
+  font-size: 3rem;
+}
+
+.feature-column h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+.disclaimer {
+  background:
+    linear-gradient(rgba(33, 33, 33, 0.9), rgba(33, 33, 33, 0.9)),
+    url("https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
+      center/cover;
+  padding: 100px 150px;
+  justify-items: center;
+  text-align: center;
+}
+
+.disclaimer h2 {
+  color: whitesmoke;
+  font-size: 2.5rem;
+  padding-bottom: 30px;
+}
+
+.disclaimer p {
+  color: whitesmoke;
+  font-size: 1.2rem;
+  padding-bottom: 30px;
+  max-width: 700px;
+}
+
+.disclaimer button {
+  background-color: orangered;
+  color: whitesmoke;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 1.1rem 2rem;
+}
+
+footer {
+  background-color: black;
+  color: whitesmoke;
+  justify-items: center;
+  align-items: center;
+  text-align: left;
+  padding: 100px 150px;
+}
+
+footer a{
+  text-decoration: none;
+  color: whitesmoke;
+  transition: all 0.3s ease;
+}
+
+footer a:hover:not(.social-links a){
+  color: orangered;
+}
+
+footer h3{
+  color: orangered;
+  padding-bottom: 20px;
+}
+
+.footer-list {
+  display: flex;
+}
+
+.footer-column {
+  color: whitesmoke;
+  max-width: 500px;
+  width: 400px;
+  padding: 2.5rem;
+}
+
+.footer-column ul{
+  list-style: none;
+}
+
+.footer-column ul li{
+  padding-bottom: 10px;
+}
+
+.social-links{
+  display: flex;
+}
+
+.social-links i{
+  background-color: gray;
+  padding: 13px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+}
+
+.social-links i:hover{
+  background-color: orangered;
+  color: white;
+}
+
+.copyright{
+  width: 100%;
+  justify-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid gray;
 }
