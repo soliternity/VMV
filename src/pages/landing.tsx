@@ -400,18 +400,35 @@ export default function landing() {
           </p>
         </div>
       </footer>
-        {modalOpen && (
-          <div onClick={toggleModal} className="z-2 fixed w-full h-full justify-center items-center top-0 left-0 flex transition bg-[#000000cc]">
-            <div className="py-12 px-24 bg-[whitesmoke] text-center rounded-xl">
-              <h1 className="text-3xl font-bold text-orange-600 mb-8">Select Login Type</h1>
-              <div className="flex  flex-col mb-8">
-                <Link to="/staff-login" className="p-4  mb-4 bg-orange-600 text-[whitesmoke] rounded-xl font-bold hover:bg-orange-950">Staff Login</Link>
-                <button className="p-4 bg-orange-900 text-[whitesmoke] rounded-xl font-bold hover:bg-orange-950">Admin Login</button>
-              </div>
-              <button onClick={toggleModal} className="text-orange-900 underline hover:text-orange-950">Cancel</button>
+      {modalOpen && (
+        <div
+          onClick={toggleModal}
+          className="z-2 fixed w-full h-full justify-center items-center top-0 left-0 flex transition bg-[#000000cc]"
+        >
+          <div className="py-12 px-24 bg-[whitesmoke] text-center rounded-xl">
+            <h1 className="text-3xl font-bold text-orange-600 mb-8">
+              Select Login Type
+            </h1>
+            <div className="flex  flex-col mb-8">
+              <Link
+                to="/staff-login"
+                className="p-4  mb-4 bg-orange-600 text-[whitesmoke] rounded-xl font-bold hover:bg-orange-950"
+              >
+                Staff Login
+              </Link>
+              <button className="p-4 bg-orange-900 text-[whitesmoke] rounded-xl font-bold hover:bg-orange-950">
+                Admin Login
+              </button>
             </div>
+            <button
+              onClick={toggleModal}
+              className="text-orange-900 underline hover:text-orange-950"
+            >
+              Cancel
+            </button>
           </div>
-        )}
+        </div>
+      )}
     </div>
   );
 }
